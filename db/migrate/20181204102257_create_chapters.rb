@@ -1,6 +1,6 @@
-class CreatePosts < ActiveRecord::Migration[5.1]
+class CreateChapters < ActiveRecord::Migration[5.1]
   def change
-    create_table :posts do |t|
+    create_table :chapters do |t|
       t.string :title
       t.text :body
       t.text :description

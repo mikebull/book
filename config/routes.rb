@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'chapters#index'
+  resources :chapters, param: :slug do
+    resources :comments, path: "comments/:paragraph_id", defaults: { paragraph_id: nil }
+  end
 end

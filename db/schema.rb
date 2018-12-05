@@ -10,22 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181204104519) do
+ActiveRecord::Schema.define(version: 20181204161732) do
+
+  create_table "chapters", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "chapter_id"
     t.string "paragraph_reference"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["chapter_id"], name: "index_comments_on_chapter_id"
   end
 
 end

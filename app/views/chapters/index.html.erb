@@ -1,0 +1,9 @@
+<% if @chapters.any? %>
+  <ul>
+    <% @chapters.each do |chapter| %>
+      <li><%= link_to chapter.title, chapter_path(slug: chapter.slug) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><%= link_to 'New', new_chapter_path %></p>

@@ -1,0 +1,12 @@
+<h1><%= @chapter.title %></h1>
+<%= markdown(@chapter.body) %>
+
+<h3>Responses</h3>
+<% @comments.each do |comment| %>
+  <div class="comment" data-paragraph="<%= comment.paragraph_reference %>">
+    <p><%= comment.name %></p>
+    <%= comment.body %>
+  </div>
+<% end %>
+
+<p><%= link_to "Edit", edit_chapter_path %></p>

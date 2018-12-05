@@ -1,0 +1,14 @@
+<%= form_for chapter, html: { multipart: true, class: "editor-form", data: { page: 'main-editor' }, autocomplete: "off" } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'editor-title', placeholder: 'Title', autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :body %> 
+  </div>
+
+  <%= f.submit %>
+
+<% end %>
