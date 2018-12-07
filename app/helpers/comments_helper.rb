@@ -8,6 +8,7 @@ module CommentsHelper
     # Create hash of inner text/html
     text = node.inner_html
 
+    # Add together
     str = "#{node_type}-#{position}-#{text}"
 
     Digest::SHA1.hexdigest(str)[0...5]

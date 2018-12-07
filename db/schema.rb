@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181204161732) do
+ActiveRecord::Schema.define(version: 20181207161816) do
 
   create_table "chapters", force: :cascade do |t|
     t.string "title"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20181204161732) do
     t.integer "chapter_id"
     t.string "paragraph_reference"
     t.index ["chapter_id"], name: "index_comments_on_chapter_id"
+  end
+
+  create_table "paragraphs", id: false, force: :cascade do |t|
+    t.string "hash"
+    t.text "paragraph"
+    t.string "node_type"
+    t.integer "node_position"
+    t.integer "chapter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chapter_id"], name: "index_paragraphs_on_chapter_id"
   end
 
 end
