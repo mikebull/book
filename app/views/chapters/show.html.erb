@@ -1,12 +1,29 @@
-<h1><%= @chapter.title %></h1>
-<%= markdown(@chapter.body) %>
+<div class="book">
+  <h1><%= @chapter.title %></h1>
+  <%= content(@chapter) %>
 
-<h3>Responses</h3>
-<% @comments.each do |comment| %>
-  <div class="comment" data-paragraph="<%= comment.paragraph_reference %>">
-    <p><%= comment.name %></p>
-    <%= comment.body %>
-  </div>
-<% end %>
+  <p><%= link_to "Edit", edit_chapter_path %></p>
+</div>
 
-<p><%= link_to "Edit", edit_chapter_path %></p>
+<script>
+  let elements = document.querySelectorAll('a[data-toggle]');
+
+  let toggleComments = function(event) {
+    event.preventDefault();
+
+    if (this.hasAttribute('data-toggle')) {
+      let hash = this.getAttribute('data-paragraph');
+      let commentBox = document.querySelector('.comments[data-paragraph-comments="' + hash + '"]');
+
+      if (this.getAttribute('data-toggle') == 'false') {
+        this.setAttribute('data-toggle', 'true');
+        commentBox.setAttribute('style', 'display: block;');
+      } else {
+        this.setAttribute('data-toggle', 'false');
+        commentBox.setAttribute('style', 'display: none;');
+      }
+    }
+  };
+
+elements.forEach(element => { element.addEventListener('click', toggleComments); });
+</script>

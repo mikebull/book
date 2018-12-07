@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background: #f2f1f0;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+h1, h2, h3 {
+  font-family: georgia,serif;
+  font-weight: normal;
+}
+
+span {
+  font-weight: bold;
+  font-size: 80%;
+  margin-right: 10px;
+}
+
+.date {
+  font-weight: normal;
+}
+
+.book, .header {
+  width: 50em;
+  margin: 0 auto;
+}
+
+.book {
+  background: white;
+  padding: 2em;
+}
+
+.comment {
+  background-color: #eeeeff;
+  padding: 0.5em;
+  margin: 0.5em;
+  margin-left: 2em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #aaaaff;
+}
