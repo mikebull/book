@@ -9,7 +9,7 @@ class ParagraphDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     chapter: Field::BelongsTo,
-    hash: Field::String,
+    paragraph_reference: Field::String,
     paragraph: Field::Text,
     node_type: Field::String,
     node_position: Field::Number,
@@ -24,7 +24,7 @@ class ParagraphDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :chapter,
-    :hash,
+    :paragraph_reference,
     :paragraph,
     :node_type,
   ].freeze
@@ -33,7 +33,7 @@ class ParagraphDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :chapter,
-    :hash,
+    :paragraph_reference,
     :paragraph,
     :node_type,
     :node_position,
@@ -46,7 +46,7 @@ class ParagraphDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :chapter,
-    :hash,
+    :paragraph_reference,
     :paragraph,
     :node_type,
     :node_position,

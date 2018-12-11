@@ -5,6 +5,7 @@ class Chapter < ApplicationRecord
   validates :body, presence: true
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :paragraphs
 
   def self.add_slugs
     update(slug: to_slug(name))

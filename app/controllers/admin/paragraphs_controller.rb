@@ -11,9 +11,15 @@ module Admin
     # end
 
     # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   Paragraph.find_by!(slug: param)
-    # end
+    def find_resource(param)
+      Paragraph.find_by!(paragraph_reference: param)
+    end
+
+    def requested_resource
+      @requested_resource ||= find_resource(params[:paragraph_reference]).tap do |resource|
+        authorize_resource(resource)
+      end
+    end
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information

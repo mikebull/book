@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20181210173608) do
     t.index ["chapter_id"], name: "index_comments_on_chapter_id"
   end
 
-  create_table "paragraphs", id: false, force: :cascade do |t|
+  create_table "paragraphs", force: :cascade do |t|
     t.string "paragraph_reference"
     t.text "paragraph"
     t.string "node_type"

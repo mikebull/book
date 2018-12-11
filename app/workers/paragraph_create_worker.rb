@@ -1,10 +1,9 @@
-class ParagraphWorker
+class ParagraphCreateWorker
   include Sidekiq::Worker
 
   def perform(id)
     chapter = Chapter.find(id)
-
-    # TODO: Loop through paragraphs
+    
     markdown = Redcarpet::Markdown.new(::Redcarpet::Render::HTML,
       no_intra_emphasis: true,
       fenced_code_blocks: true,

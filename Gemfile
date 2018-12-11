@@ -55,3 +55,4 @@ gem 'nokogiri'
 gem "administrate"
 gem 'administrate-field-simple_markdown'
 gem 'sidekiq'
+gem 'similar_text'

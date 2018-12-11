@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :chapters
     resources :comments
-    resources :paragraphs
+    resources :paragraphs, param: :paragraph_reference
 
     root to: "chapters#index"
   end

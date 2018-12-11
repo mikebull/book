@@ -1,7 +1,7 @@
 class CreateParagraphs < ActiveRecord::Migration[5.1]
   def change
-    create_table :paragraphs, id: false, primary_key: :hash do |t|
-      t.string :hash
+    create_table :paragraphs do |t|
+      t.string :paragraph_reference
       t.text :paragraph
       t.string :node_type
       t.integer :node_position
