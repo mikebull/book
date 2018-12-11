@@ -52,3 +52,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails'
 gem 'redcarpet'
 gem 'nokogiri'
+gem "administrate"
+gem 'administrate-field-simple_markdown'
+gem 'sidekiq'

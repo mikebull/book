@@ -7,11 +7,10 @@
   <% if @chapters.any? %>
     <ol>
       <% @chapters.each do |chapter| %>
-        <li><%= link_to chapter.title, chapter_path(slug: chapter.slug) %></li>
+        <li class="<%= cycle('zebra-a', 'zebra-b') -%>"><%= link_to chapter.title, chapter_path(slug: chapter.slug) %></li>
       <% end %>
     </ol>
   <% end %>
-  <p><%= link_to 'New', new_chapter_path %></p>
 </div>
 
 <div class="footer">
